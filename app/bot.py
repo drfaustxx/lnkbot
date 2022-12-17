@@ -49,7 +49,7 @@ async def send_welcome(message: types.Message):
     This handler will be called when user sends `/start` or `/help` command
     """
     await message.reply(
-        "Please send the URL and description in the following format: URL DESCRIPTION\n Example: \nhttps://www.youtube.com/watch?v=dQw4w9WgXcQ:: Never click here:: Hey check this 🙂",
+        "Please send the URL and description in the following format: URL DESCRIPTION\nExample: \nhttps://www.youtube.com/watch?v=dQw4w9WgXcQ:: Never click here:: Hey check this 🙂",
         disable_web_page_preview=True,
     )
 
