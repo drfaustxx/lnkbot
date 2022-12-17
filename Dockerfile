@@ -1,10 +1,13 @@
-FROM python:3.8
+FROM python:3.9.5 as base_image
 # set work directory
-WORKDIR /app/
+WORKDIR /app
+ENV PYTHONPATH=/app
 # copy project
-COPY . /app/
+COPY . /app
 # install dependencies
 RUN pip install --user aiogram
-RUN pip install --user dotenv
-# run app
-CMD ["python3", "/app/bot.py"]
+RUN pip install --user python-dotenv
+
+FROM base_image as client
+CMD [ "python", "app/bot.py"]
+
